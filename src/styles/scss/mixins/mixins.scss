@@ -1,0 +1,146 @@
+@mixin style-text(
+  $font-family: "Outfit",
+  $font-style: normal,
+  $font-weight: 500,
+  $font-size,
+  $line-height,
+  $letter-spacing: -2px
+) {
+  font-family: $font-family;
+  font-style: $font-style;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin display1() {
+  @include style-text($font-size: 72px, $line-height: 78px);
+}
+
+@mixin display2() {
+  @include style-text($font-size: 64px, $line-height: 72px);
+}
+
+@mixin display3() {
+  @include style-text($font-size: 48px, $line-height: 56px);
+}
+
+@mixin headline1() {
+  @include style-text(
+    $font-size: 42px,
+    $line-height: 50px,
+    $letter-spacing: -0.02em
+  );
+}
+
+@mixin headline2() {
+  @include style-text(
+    $font-size: 36px,
+    $line-height: 46px,
+    $letter-spacing: -1px
+  );
+}
+
+@mixin headline3() {
+  @include style-text(
+    $font-size: 22px,
+    $line-height: 32px,
+    $letter-spacing: -1px
+  );
+}
+
+@mixin headline4() {
+  @include style-text(
+    $font-size: 18px,
+    $line-height: 28px,
+    $letter-spacing: 0.4px
+  );
+}
+
+@mixin headline5() {
+  @include style-text(
+    $font-size: 16px,
+    $line-height: 26px,
+    $letter-spacing: 0.4px
+  );
+}
+
+@mixin headline6() {
+  @include style-text(
+    $font-size: 14px,
+    $line-height: 24px,
+    $letter-spacing: 0.4px
+  );
+}
+
+@mixin linkLarge() {
+  @include style-text(
+    $font-size: 15px,
+    $line-height: 24px,
+    $letter-spacing: -0.3px
+  );
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@mixin linkSmall() {
+  @include style-text(
+    $font-size: 14px,
+    $line-height: 24px,
+    $letter-spacing: -0.3px
+  );
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@mixin paragraph1() {
+  @include style-text(
+    $font-family: "DM Sans",
+    $font-weight: 400,
+    $font-size: 18px,
+    $line-height: 28px,
+    $letter-spacing: -0.3px
+  );
+}
+
+@mixin paragraph2() {
+  @include style-text(
+    $font-family: "DM Sans",
+    $font-weight: 400,
+    $font-size: 16px,
+    $line-height: 26px,
+    $letter-spacing: 0
+  );
+}
+
+@mixin paragraph3() {
+  @include style-text(
+    $font-family: "DM Sans",
+    $font-weight: 400,
+    $font-size: 14px,
+    $line-height: 24px,
+    $letter-spacing: -0.3px
+  );
+}
+
+@mixin flexBox($justify-content: center, $align-items: center) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin truncate-multiline-line($line: 2) {
+  $webkit: -webkit-box;
+  display: $webkit;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin truncate-text() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

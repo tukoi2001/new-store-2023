@@ -3,10 +3,11 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
+  <div>{{ $t("top_header") }}</div>
   <router-view />
 </template>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -20,8 +21,7 @@ nav {
 }
 
 nav a {
-  font-weight: bold;
-  color: #2c3e50;
+  @include display1();
 }
 
 nav a.router-link-exact-active {
